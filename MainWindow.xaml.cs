@@ -23,6 +23,35 @@ namespace RockPaperScissors_WPF
         public MainWindow()
         {
             InitializeComponent();
+            btnRock.Click += BtnRock_Click;
+            btnScissors.Click += BtnScissors_Click;
+            btnPaper.Click += BtnPaper_Click;
+            btnStartGame.Click += BtnStartGame_Click;
+        }
+
+        private void BtnRock_Click(object sender, RoutedEventArgs e)
+        {
+            // Обработка нажатия кнопки "Камень"
+            txtResult.Text += "Выбран Камень\n";
+        }
+
+        private void BtnScissors_Click(object sender, RoutedEventArgs e)
+        {
+            // Обработка нажатия кнопки "Ножницы"
+            txtResult.Text += "Выбраны Ножницы\n";
+        }
+
+        private void BtnPaper_Click(object sender, RoutedEventArgs e)
+        {
+            // Обработка нажатия кнопки "Бумага"
+            txtResult.Text += "Выбрана Бумага\n";
+        }
+
+        private void BtnStartGame_Click(object sender, RoutedEventArgs e)
+        {
+            // Обработка нажатия кнопки "Начать игру"
+            txtResult.Text += "Игра началась!\n";
         }
     }
 }
+

@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Кнопки для выбора камня, ножниц, бумаги -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
+            <Button x:Name="btnRock" Content="Камень" Width="100" Margin="5"/>
+            <Button x:Name="btnScissors" Content="Ножницы" Width="100" Margin="5"/>
+            <Button x:Name="btnPaper" Content="Бумага" Width="100" Margin="5"/>
+        </StackPanel>
+
+        <!-- Кнопка для начала игры -->
+        <Button x:Name="btnStartGame" Grid.Row="1" Content="Начать игру" Width="150" HorizontalAlignment="Center" Margin="10"/>
+
+        <!-- Окно для вывода результата -->
+        <TextBox x:Name="txtResult" Grid.Row="2" Margin="10" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
     </Grid>
 </Window>
