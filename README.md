@@ -10,5 +10,4 @@
 
 ## Скриншоты
 
-![Скриншот 1](screenshot1.png)
-![Скриншот 2](screenshot2.png)
+![Скриншот 1](GameScreen.png)
