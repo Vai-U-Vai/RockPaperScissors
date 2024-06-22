@@ -1,0 +1,17 @@
+bin/
+obj/
+*.user
+*.rsuser
+*.suo
+*.cache
+*.log
+*.pdb
+*.vspscc
+*.vssscc
+_ReSharper.*
+*.ReSharper
+*.resharper
+Thumbs.db
+[Bb]in/
+[Oo]bj/
+.vs/
