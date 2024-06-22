@@ -19,10 +19,6 @@
             <Button x:Name="btnScissors" Content="Ножницы" Width="100" Margin="5"/>
             <Button x:Name="btnPaper" Content="Бумага" Width="100" Margin="5"/>
         </StackPanel>
-
-        <!-- Кнопка для начала игры -->
-        <Button x:Name="btnStartGame" Grid.Row="1" Content="Начать игру" Width="150" HorizontalAlignment="Center" Margin="10"/>
-
         <!-- Окно для вывода результата -->
         <TextBox x:Name="txtResult" Grid.Row="2" Margin="10" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
     </Grid>

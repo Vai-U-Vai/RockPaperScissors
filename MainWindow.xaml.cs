@@ -20,38 +20,63 @@ namespace RockPaperScissors_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private GameStates.States compStates;
+        private GameStates.States playerStates;
         public MainWindow()
         {
             InitializeComponent();
+            compStates = new GameStates.States();
+            playerStates = new GameStates.States();
             btnRock.Click += BtnRock_Click;
             btnScissors.Click += BtnScissors_Click;
-            btnPaper.Click += BtnPaper_Click;
-            btnStartGame.Click += BtnStartGame_Click;
+            btnPaper.Click += BtnPaper_Click;            
         }
 
         private void BtnRock_Click(object sender, RoutedEventArgs e)
         {
             // Обработка нажатия кнопки "Камень"
-            txtResult.Text += "Выбран Камень\n";
+            txtResult.Text += "Вы выбрали Камень\n";
+            playerStates = GameStates.States.Камень;
+            compStates = GameStates.GetRandomState();
+            GameHandler();
         }
 
         private void BtnScissors_Click(object sender, RoutedEventArgs e)
         {
             // Обработка нажатия кнопки "Ножницы"
-            txtResult.Text += "Выбраны Ножницы\n";
+            txtResult.Text += "Вы выбрали Ножницы\n";
+            playerStates = GameStates.States.Ножницы;
+            compStates = GameStates.GetRandomState();
+            GameHandler();
         }
 
         private void BtnPaper_Click(object sender, RoutedEventArgs e)
         {
             // Обработка нажатия кнопки "Бумага"
-            txtResult.Text += "Выбрана Бумага\n";
+            txtResult.Text += "Вы выбрали Бумагу\n";
+            playerStates = GameStates.States.Бумага;
+            compStates = GameStates.GetRandomState();
+            GameHandler();
         }
 
-        private void BtnStartGame_Click(object sender, RoutedEventArgs e)
-        {
-            // Обработка нажатия кнопки "Начать игру"
-            txtResult.Text += "Игра началась!\n";
-        }
+        private void GameHandler()
+        {            
+                txtResult.Text += $"Компьютер выбрал {compStates}\n";
+                int rezult = GameStates.Comparer.Compare(playerStates, compStates);
+                if (rezult == 1)
+                {
+                    txtResult.Text += "Вы победили!\n";
+
+                }
+                else if (rezult == 0)
+                {
+                    txtResult.Text += "У вас ничья!\n";
+                }
+                else
+                {
+                    txtResult.Text += "Вы проиграли! \n";
+                }            
+        }       
     }
 }
 
